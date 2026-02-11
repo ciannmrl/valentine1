@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ma Valentine ❤️</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+```
+    h1 {
+        color: #d63384;
+        font-size: 40px;
+        margin-top: 100px;
+    }
+
+    .buttons {
+        margin-top: 50px;
+        position: relative;
+        height: 200px;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 15px 30px;
+        margin: 10px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+        position: absolute;
+    }
+
+    #yesBtn {
+        background-color: #ff4d6d;
+        color: white;
+        left: 45%;
+    }
+
+    #noBtn {
+        background-color: #6c757d;
+        color: white;
+        left: 55%;
+    }
+
+    #message {
+        margin-top: 40px;
+        font-size: 30px;
+        color: #ff0066;
+        display: none;
+    }
+</style>
+```
+
+</head>
+<body>
+
+```
+<h1>Veux-tu être ma Valentine ? 💖</h1>
+
+<div class="buttons">
+    <button id="yesBtn">Oui ❤️</button>
+    <button id="noBtn">Non 😢</button>
+</div>
+
+<div id="message">Yaaaay !!! 💕 Je t'aime 😍</div>
+
+<script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const message = document.getElementById("message");
+
+    // Bouton NON qui fuit
+    noBtn.addEventListener("mouseover", function() {
+        const maxX = window.innerWidth - noBtn.offsetWidth;
+        const maxY = window.innerHeight - noBtn.offsetHeight;
+
+        const randomX = Math.random() * maxX;
+        const randomY = Math.random() * maxY;
+
+        noBtn.style.left = randomX + "px";
+        noBtn.style.top = randomY + "px";
+    });
+
+    // Bouton OUI
+    yesBtn.addEventListener("click", function() {
+        document.querySelector(".buttons").style.display = "none";
+        message.style.display = "block";
+    });
+</script>
+```
+
+</body>
+</html>
